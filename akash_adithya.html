@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Akash weds Adithya</title>
+  <style>
+    /* Add CSS to make the website look aesthetically pleasing, for example: */
+    body {
+      background-color: #fff2e6;
+	  background-image:url('C://Users//akash//Desktop//indian-wedding-background-14588706.jpg');
+      font-family: "Open Sans", sans-serif;
+    }
+    h1 {
+          text-align: center;
+    font-family: cursive;
+    font-size: 4em;
+    margin-top: 50px;
+    color: midnightblue;
+    }
+    #countdown {
+      text-align: center;
+      font-size: 1.5em;
+      margin-top: 20px;
+	  
+    font-family: cursive;
+    }
+	#date
+	{text-align: center;
+      font-size: 2em;
+      margin-top: 20px;
+	  color: indigo;
+    font-family: cursive;
+	}
+  </style>
+</head>
+<body >
+  <h1>Akash weds Adithya</h1>
+  <div id="date"></div>
+  <div id="countdown"></div>
+  <script>
+    // Set the date of the wedding
+    var weddingDate = new Date("April 8, 2023");
+    // Get the current date
+    var currentDate = new Date();
+    // Calculate the time remaining until the wedding
+    var timeRemaining = weddingDate - currentDate;
+    // Convert the time remaining to a readable format
+    var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+	document.getElementById("date").innerHTML=" April 8 2023"
+    // Set the text of the countdown element
+    document.getElementById("countdown").innerHTML = days + " days, " + hours + " hours, " + minutes + " minutes, and " + seconds + " seconds until the wedding";
+    // Update the countdown every second
+    setInterval(function() {
+      currentDate = new Date();
+      timeRemaining = weddingDate - currentDate;
+      days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+      hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+      seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+      document.getElementById("countdown").innerHTML = days + " days, " + hours + " hours, " + minutes + " minutes, and " + seconds + " seconds until the wedding";
+    }, 1000);
+  </script>
+</body>
+</html>
